@@ -1,5 +1,6 @@
 package com.example.demo.TestController
 
+import com.example.demo.Config
 import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
@@ -14,7 +15,7 @@ data class Todo(var id:Int=0, var title:String="", var completed:Boolean=false, 
     constructor():this(0);
 
     val url:String
-        get()="http://localhost:8080/"+id;
+        get()="${Config.root}/${id}";
 }
 
 
